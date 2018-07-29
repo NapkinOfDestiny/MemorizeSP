@@ -1,0 +1,10 @@
+C:\Users\nicho\source\repos\Memorize\Memorize\bin\Debug\Memorize.exe.config
+C:\Users\nicho\source\repos\Memorize\Memorize\bin\Debug\Memorize.exe
+C:\Users\nicho\source\repos\Memorize\Memorize\bin\Debug\Memorize.pdb
+C:\Users\nicho\source\repos\Memorize\Memorize\obj\Debug\Memorize.csprojResolveAssemblyReference.cache
+C:\Users\nicho\source\repos\Memorize\Memorize\obj\Debug\Memorize.MemorizeMenu.resources
+C:\Users\nicho\source\repos\Memorize\Memorize\obj\Debug\Memorize.Properties.Resources.resources
+C:\Users\nicho\source\repos\Memorize\Memorize\obj\Debug\Memorize.csproj.GenerateResource.cache
+C:\Users\nicho\source\repos\Memorize\Memorize\obj\Debug\Memorize.csproj.CoreCompileInputs.cache
+C:\Users\nicho\source\repos\Memorize\Memorize\obj\Debug\Memorize.exe
+C:\Users\nicho\source\repos\Memorize\Memorize\obj\Debug\Memorize.pdb
