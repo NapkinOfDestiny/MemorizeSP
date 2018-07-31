@@ -8,3 +8,13 @@ C:\Users\nicho\source\repos\Memorize\Memorize\obj\Debug\Memorize.csproj.Generate
 C:\Users\nicho\source\repos\Memorize\Memorize\obj\Debug\Memorize.csproj.CoreCompileInputs.cache
 C:\Users\nicho\source\repos\Memorize\Memorize\obj\Debug\Memorize.exe
 C:\Users\nicho\source\repos\Memorize\Memorize\obj\Debug\Memorize.pdb
+C:\Users\Nick\Documents\Projects\MemorizeSP\Memorize\Memorize\obj\Debug\Memorize.csprojAssemblyReference.cache
+C:\Users\Nick\Documents\Projects\MemorizeSP\Memorize\Memorize\obj\Debug\Memorize.MemorizeMenu.resources
+C:\Users\Nick\Documents\Projects\MemorizeSP\Memorize\Memorize\obj\Debug\Memorize.Properties.Resources.resources
+C:\Users\Nick\Documents\Projects\MemorizeSP\Memorize\Memorize\obj\Debug\Memorize.csproj.GenerateResource.cache
+C:\Users\Nick\Documents\Projects\MemorizeSP\Memorize\Memorize\obj\Debug\Memorize.csproj.CoreCompileInputs.cache
+C:\Users\Nick\Documents\Projects\MemorizeSP\Memorize\Memorize\obj\Debug\Memorize.exe
+C:\Users\Nick\Documents\Projects\MemorizeSP\Memorize\Memorize\obj\Debug\Memorize.pdb
+C:\Users\Nick\Documents\Projects\MemorizeSP\Memorize\Memorize\bin\Debug\Memorize.exe.config
+C:\Users\Nick\Documents\Projects\MemorizeSP\Memorize\Memorize\bin\Debug\Memorize.exe
+C:\Users\Nick\Documents\Projects\MemorizeSP\Memorize\Memorize\bin\Debug\Memorize.pdb

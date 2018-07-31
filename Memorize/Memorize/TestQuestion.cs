@@ -30,7 +30,7 @@ namespace Memorize
         //Constructor
         public TestQuestion(
             string nam, 
-            int know,
+            int know = 0,
             List<System.Drawing.Bitmap> quesImages = null,
             List<string> quesText = null,
             List<System.Drawing.Bitmap> answImages = null, 
@@ -75,24 +75,9 @@ namespace Memorize
 
                     known = Convert.ToInt32(rawData[i]);
                 }
-                else if (rawData[i].Contains("<?>"))
-                {
-                    if (first == true)
-                    {
-                        first = false;
-                    }
-                    else
-                    {
+             
 
-                        testQuestions.Add(tempQuestion);
-                        tempQuestion = new TestQuestion("TEMP_QUESTION"); // reset temp
-                    }
-                }
-                else if (first != true)
-                {
-                    tempQuestion.addToRawData(rawData[i]);
 
-                }
             }
 
 
