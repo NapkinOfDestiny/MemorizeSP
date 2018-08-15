@@ -22,8 +22,7 @@ namespace Memorize
         //      \/         /\
         //   COMPILE    DECOMPILE
         //      \/         /\
-        List<TestQuestion> testQuestions = new List<TestQuestion>();
-
+        public List<TestQuestion> testQuestions = new List<TestQuestion>();
 
 
         //----------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -178,7 +177,7 @@ namespace Memorize
         }
 
 
-
+       
 
 
 

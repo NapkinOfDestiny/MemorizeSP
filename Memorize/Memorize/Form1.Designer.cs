@@ -62,7 +62,7 @@
             this.panel1_control.Controls.Add(this.listBox1);
             this.panel1_control.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1_control.Location = new System.Drawing.Point(0, 554);
-            this.panel1_control.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1_control.Margin = new System.Windows.Forms.Padding(4);
             this.panel1_control.MaximumSize = new System.Drawing.Size(267, 0);
             this.panel1_control.Name = "panel1_control";
             this.panel1_control.Size = new System.Drawing.Size(267, 0);
@@ -73,7 +73,7 @@
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 16;
             this.listBox1.Location = new System.Drawing.Point(13, 2);
-            this.listBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.listBox1.Margin = new System.Windows.Forms.Padding(4);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(159, 68);
             this.listBox1.TabIndex = 0;
@@ -146,9 +146,9 @@
             // tabPage_multibleChoice
             // 
             this.tabPage_multibleChoice.Location = new System.Drawing.Point(4, 25);
-            this.tabPage_multibleChoice.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage_multibleChoice.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage_multibleChoice.Name = "tabPage_multibleChoice";
-            this.tabPage_multibleChoice.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage_multibleChoice.Padding = new System.Windows.Forms.Padding(4);
             this.tabPage_multibleChoice.Size = new System.Drawing.Size(1059, 525);
             this.tabPage_multibleChoice.TabIndex = 1;
             this.tabPage_multibleChoice.Text = "Multible Choice";
@@ -162,7 +162,7 @@
             this.tabControl1_data.Controls.Add(this.tabPage_textInput);
             this.tabControl1_data.Dock = System.Windows.Forms.DockStyle.Top;
             this.tabControl1_data.Location = new System.Drawing.Point(0, 0);
-            this.tabControl1_data.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabControl1_data.Margin = new System.Windows.Forms.Padding(4);
             this.tabControl1_data.Name = "tabControl1_data";
             this.tabControl1_data.SelectedIndex = 0;
             this.tabControl1_data.Size = new System.Drawing.Size(1067, 554);
@@ -174,7 +174,7 @@
             this.tabPage_lessonEditor.Controls.Add(this.textBox_lessonEditor);
             this.tabPage_lessonEditor.Controls.Add(this.menuStrip1);
             this.tabPage_lessonEditor.Location = new System.Drawing.Point(4, 25);
-            this.tabPage_lessonEditor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage_lessonEditor.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage_lessonEditor.Name = "tabPage_lessonEditor";
             this.tabPage_lessonEditor.Size = new System.Drawing.Size(1059, 525);
             this.tabPage_lessonEditor.TabIndex = 3;
@@ -185,7 +185,7 @@
             // 
             this.textBox_errors.Dock = System.Windows.Forms.DockStyle.Right;
             this.textBox_errors.Location = new System.Drawing.Point(844, 0);
-            this.textBox_errors.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox_errors.Margin = new System.Windows.Forms.Padding(4);
             this.textBox_errors.Multiline = true;
             this.textBox_errors.Name = "textBox_errors";
             this.textBox_errors.ReadOnly = true;
@@ -199,7 +199,7 @@
             // 
             this.textBox_lessonEditor.Dock = System.Windows.Forms.DockStyle.Left;
             this.textBox_lessonEditor.Location = new System.Drawing.Point(0, 0);
-            this.textBox_lessonEditor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox_lessonEditor.Margin = new System.Windows.Forms.Padding(4);
             this.textBox_lessonEditor.Multiline = true;
             this.textBox_lessonEditor.Name = "textBox_lessonEditor";
             this.textBox_lessonEditor.ScrollBars = System.Windows.Forms.ScrollBars.Both;
@@ -221,7 +221,7 @@
             // tabPage_textInput
             // 
             this.tabPage_textInput.Location = new System.Drawing.Point(4, 25);
-            this.tabPage_textInput.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage_textInput.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage_textInput.Name = "tabPage_textInput";
             this.tabPage_textInput.Size = new System.Drawing.Size(1059, 525);
             this.tabPage_textInput.TabIndex = 2;
@@ -235,7 +235,7 @@
             this.panel_selectLesson.Controls.Add(this.checkedListBox_featuresInLesson);
             this.panel_selectLesson.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel_selectLesson.Location = new System.Drawing.Point(0, 409);
-            this.panel_selectLesson.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel_selectLesson.Margin = new System.Windows.Forms.Padding(4);
             this.panel_selectLesson.Name = "panel_selectLesson";
             this.panel_selectLesson.Size = new System.Drawing.Size(1067, 145);
             this.panel_selectLesson.TabIndex = 4;
@@ -245,7 +245,7 @@
             this.checkedListBox_lessonsChecked.Dock = System.Windows.Forms.DockStyle.Left;
             this.checkedListBox_lessonsChecked.FormattingEnabled = true;
             this.checkedListBox_lessonsChecked.Location = new System.Drawing.Point(0, 30);
-            this.checkedListBox_lessonsChecked.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkedListBox_lessonsChecked.Margin = new System.Windows.Forms.Padding(4);
             this.checkedListBox_lessonsChecked.Name = "checkedListBox_lessonsChecked";
             this.checkedListBox_lessonsChecked.ScrollAlwaysVisible = true;
             this.checkedListBox_lessonsChecked.Size = new System.Drawing.Size(863, 115);
@@ -261,7 +261,7 @@
             "Multible Choice",
             "Text Input"});
             this.checkedListBox_featuresInLesson.Location = new System.Drawing.Point(864, 32);
-            this.checkedListBox_featuresInLesson.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkedListBox_featuresInLesson.Margin = new System.Windows.Forms.Padding(4);
             this.checkedListBox_featuresInLesson.Name = "checkedListBox_featuresInLesson";
             this.checkedListBox_featuresInLesson.Size = new System.Drawing.Size(201, 106);
             this.checkedListBox_featuresInLesson.TabIndex = 0;
@@ -285,7 +285,7 @@
             this.Controls.Add(this.tabControl1_data);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MemorizeMenu";
             this.Text = "Memorize";
             this.Load += new System.EventHandler(this.MemorizeMenu_Load);

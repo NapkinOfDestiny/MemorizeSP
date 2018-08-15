@@ -87,8 +87,11 @@ namespace Memorize
         //Tests User On the TestQuestions in the LessonFile IMPROVE:(it would be good if we could do multible lesson files at once
         private void toolStripButton1_startLesson_Click(object sender, EventArgs e)
         {
-           
+            List<Lesson> lessons = new List<Lesson>();//put lesson into a list
+            lessons.Add(lesson);
 
+            Tester tester = new Tester(lessons);
+            tester.start(checkedListBox_featuresInLesson.GetSelected(0), checkedListBox_featuresInLesson.GetSelected(1));
 
 
 

@@ -247,6 +247,32 @@ namespace Memorize
         }
 
 
+        //----------------------------------------------------------------------------------------------------------------------------------------------------------
+        // returns if .this contains text question oriented stuff
+        public bool containsText()
+        {
+            bool hasText = false;
+            if (questionText.Count > 0 || answerText.Count > 0 || sAnswerText.Count > 0)
+            {
+                hasText = true;
+            }
+
+            return hasText;
+        }
+
+        //----------------------------------------------------------------------------------------------------------------------------------------------------------
+        // returns if .this contains img question oriented stuff
+        public bool containsImg()
+        {
+            bool hasImg = false;
+            if (questionImages.Count > 0 || answerImages.Count > 0 || sAnswerImages.Count > 0)
+            {
+                hasImg = true;
+            }
+
+            return hasImg;
+        }
+
 
     }
 }
