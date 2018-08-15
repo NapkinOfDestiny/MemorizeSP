@@ -2,7 +2,7 @@
 ;this is a comment
 
 <?>
-this is the name/title/number of the question
+this is the name/title/number of the question ;a comment/
 100
 
 <Q>

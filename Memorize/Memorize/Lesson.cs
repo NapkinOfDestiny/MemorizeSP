@@ -87,10 +87,11 @@ namespace Memorize
         //----------------------------------------------------------------------------------------------------------------------------------------------------------
         // tells each testquestion to compile the raw data it has
         private void compileQuestions(List<TestQuestion> testQuestions)
-        {
-            foreach (var item in testQuestions)
+        {         
+
+            for (int i = 0; i < testQuestions.Count; i++)
             {
-                item.compile();
+                testQuestions[i].compile();
             }
 
         }
@@ -127,6 +128,25 @@ namespace Memorize
             newArrayThatsAlsoAList.Add(line);
 
             rawData = newArrayThatsAlsoAList.ToArray();
+        }
+
+
+
+        //returns a list of all the testquestion errors
+        public List<string> getError(int allowedLength)
+        {
+            List<string> allErrors = new List<string>();
+
+            foreach (var question in testQuestions)
+            {
+                foreach (var error in question.qErrors)
+                {
+                    allErrors.Add(error);
+                }
+                
+            }
+
+            return allErrors;
         }
 
 

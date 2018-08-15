@@ -17,6 +17,8 @@ namespace Memorize
 
         Lesson lesson = new Lesson();
 
+        int allowedNameLength = 5;
+
 
         public MemorizeMenu()
         {
@@ -101,12 +103,25 @@ namespace Memorize
 
             lesson.rawData = textBox_lessonEditor.Lines;
             lesson.compile();
+            desplayErrors(lesson);
 
 
 
-        
 
-         
+
+
+        }
+
+        private void desplayErrors(Lesson le)
+        {
+            string errors = "";
+
+            foreach (var item in le.getError(allowedNameLength))
+            {
+                errors  += item + "\r\n";
+            }
+
+            textBox_errors.Text = "Errors(" + errors.Length + ")/r/n" + errors;
         }
 
 
