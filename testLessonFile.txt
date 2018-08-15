@@ -8,7 +8,7 @@ this is the name/title/number of the question ;a comment/
 <Q>
 text question ect
 text question ect
-@C:\Users\nicho\Pictures\interstellar-accretion-disk-2017-04-18-01.jpg 
+@C:\temp\abstract-wallpaper-4k-3.jpg
 <A>
 some answer stuff
 some answer stuff

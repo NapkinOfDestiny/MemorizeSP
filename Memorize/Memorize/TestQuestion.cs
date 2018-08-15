@@ -14,12 +14,17 @@ namespace Memorize
        
 
         //Questions 
-        List<System.Drawing.Bitmap> questionImages = new List<System.Drawing.Bitmap>();
+        List<System.Drawing.Image> questionImages = new List<System.Drawing.Image>();
         List<string> questionText = new List<string>(); // (this seems a bit odd because text doesnt need a list)
 
         //Answers 
-        List<System.Drawing.Bitmap> answerImages = new List<System.Drawing.Bitmap>();
+        List<System.Drawing.Image> answerImages = new List<System.Drawing.Image>();
         List<string> answerText = new List<string>();
+
+        //*Answers 
+        List<System.Drawing.Image> sAnswerImages = new List<System.Drawing.Image>();
+        List<string> sAnswerText = new List<string>();
+
 
 
         //for compiling/decompiling
@@ -32,19 +37,11 @@ namespace Memorize
         //Constructor
         public TestQuestion(
             string nam, 
-            int know = 0,
-            List<System.Drawing.Bitmap> quesImages = null,
-            List<string> quesText = null,
-            List<System.Drawing.Bitmap> answImages = null, 
-            List<string> answText = null)
+            int know = 0
+         )
         {
-
             name = nam;
             known = know;
-            questionImages  = quesImages;
-            questionText = quesText;
-            answerImages = answImages;
-            answerText = answText;
 
             qErrors = new List<string>();
 
@@ -77,6 +74,9 @@ namespace Memorize
             bool Q = false;
             bool A = false;
             bool SA = false;
+
+            char linkChar = '@';
+           
            
 
             for (int i = 0; i < rawData.Length; i++) //for each line 
@@ -90,19 +90,22 @@ namespace Memorize
                 {
                     Q = true;
                     A = false;
-                    SA = false;                    
+                    SA = false;
+                    i++;//get off <> line
                 }
                 else if (rawData[i].Contains("<A>"))
                 {
                     Q = false;
                     A = true;
-                    SA = false;                 
+                    SA = false;
+                    i++;//get off <> line
                 }
                 else if (rawData[i].Contains("<*A>"))
                 {
                     Q = false;
                     A = false;
-                    SA = true;                 
+                    SA = true;
+                    i++;//get off <> line
                 }
 
 
@@ -130,15 +133,45 @@ namespace Memorize
                     if (Q == true)
                     {
 
+                       if (rawData[i][0] == linkChar)// if its a link 
+                        {                        
+                            questionImages.Add(getImage(rawData[i]));
+                        }
+                        else// if its text
+                        {
+                            questionText.Add(rawData[i]);
+                        }
+
                     }
                     else if (A == true)
                     {
+
+                        if (rawData[i][0] == linkChar)// if its a link 
+                        {
+                            answerImages.Add(getImage(rawData[i]));
+                        }
+                        else// if its text
+                        {
+                            answerText.Add(rawData[i]);
+                        }
 
                     }
                     else if (SA == true)
                     {
 
+                        if (rawData[i][0] == linkChar)// if its a link 
+                        {
+                            sAnswerImages.Add(getImage(rawData[i]));
+                        }
+                        else// if its text
+                        {
+                            sAnswerText.Add(rawData[i]);
+                        }
+
+
                     }
+
+
                 }
                
                 
@@ -152,7 +185,26 @@ namespace Memorize
 
         }
 
-      
+        //----------------------------------------------------------------------------------------------------------------------------------------------------------
+        // gets image from path after formating it to nothave @ at the beginning
+        private System.Drawing.Image getImage(string unformatedPath)
+        {
+
+            List<char> path = unformatedPath.ToList<char>();//convert to list so we can remove the @ symbol
+            path.RemoveAt(0);
+
+            string finalPath = "";
+            foreach (var item in path)// turn it backinto string format
+            {
+                finalPath += item;
+            }
+
+
+            return System.Drawing.Image.FromFile(finalPath);
+
+        }
+
+
 
         //----------------------------------------------------------------------------------------------------------------------------------------------------------
         // Adds new error to qError with questions name

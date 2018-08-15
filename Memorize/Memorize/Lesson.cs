@@ -48,8 +48,6 @@ namespace Memorize
             rawData = removeCommentsFromArray(rawData);//cut out all comments
 
 
-
-
             for (int i = 0; i < rawData.Length; i++) //for each line 
             {
                 if (i == 0) //if first of file then get name and descrip of lessonFile
