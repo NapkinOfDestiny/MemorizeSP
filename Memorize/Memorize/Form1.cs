@@ -112,16 +112,30 @@ namespace Memorize
 
         }
 
+
+        //----------------------------------------------------------------------------------------------------------------------------------------------------------
+        // desplays the inputed lesson's testquestions's synax errors while compiling
         private void desplayErrors(Lesson le)
         {
-            string errors = "";
 
-            foreach (var item in le.getError(allowedNameLength))
+            //if there is more than 0 errors then desplay them
+            if (le.getError().Count > 0)
             {
-                errors  += item + "\r\n";
+                string errors = "";
+
+                foreach (var item in le.getError())
+                {
+                    errors += item + "\r\n";
+                }
+
+
+                textBox_errors.Text = "Errors(" + le.getError().Count + ")/r/n" + errors;
+            }
+            else
+            {
+                textBox_errors.Text = "No Errors :)";
             }
 
-            textBox_errors.Text = "Errors(" + errors.Length + ")/r/n" + errors;
         }
 
 

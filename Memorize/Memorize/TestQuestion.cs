@@ -11,6 +11,7 @@ namespace Memorize
     {
         public int known { get; set; }
         public string name { get; set; }
+       
 
         //Questions 
         List<System.Drawing.Bitmap> questionImages = new List<System.Drawing.Bitmap>();
@@ -68,39 +69,40 @@ namespace Memorize
         }
 
         //----------------------------------------------------------------------------------------------------------------------------------------------------------
-        // configures the this to match everything found in rawData
+        // configures the .this to match everything found in rawData
         public void compile()
         {
 
-            //these keep track of where we are 
-            bool first = true;
+            //these keep track of where we are         
             bool Q = false;
             bool A = false;
             bool SA = false;
+           
 
             for (int i = 0; i < rawData.Length; i++) //for each line 
             {
+               
+
+
+                
                 //this first if segment updates location
                 if (rawData[i].Contains("<Q>"))
                 {
                     Q = true;
                     A = false;
-                    SA = false;
-                    first = false;
+                    SA = false;                    
                 }
                 else if (rawData[i].Contains("<A>"))
                 {
                     Q = false;
                     A = true;
-                    SA = false;
-                    first = false;
+                    SA = false;                 
                 }
                 else if (rawData[i].Contains("<*A>"))
                 {
                     Q = false;
                     A = false;
-                    SA = true;
-                    first = false;
+                    SA = true;                 
                 }
 
 
@@ -108,32 +110,37 @@ namespace Memorize
                 //this segment of if saves the data
                 if (i == 0) //if first of file then get name and known
                 {
-                    name = removeComments(rawData[i]);
-                    i++;
+                    name = rawData[i];
+                    i++;//next line
 
 
                     try
                     {
-                        known = Convert.ToInt32(removeComments(rawData[i]));
+                        known = Convert.ToInt32(rawData[i]);
                     }
                     catch (Exception)
                     {
-                        this.qErrors.Add("Question" + getNameWithEllip() + $":Compile: raw data didn't show as int instead it was \"{removeComments(rawData[i])}\"");
+
+                        addError($"Compile: known amount didn't show as int instead it was \"{rawData[i]}\"");
                     }
 
                 }
-                else if (Q == true)
+                else if (removeWhitespace(rawData[i]) != "")// if not first line and isn't blank
                 {
+                    if (Q == true)
+                    {
 
-                }
-                else if (A == true)
-                {
+                    }
+                    else if (A == true)
+                    {
 
-                }
-                else if (SA == true)
-                {
+                    }
+                    else if (SA == true)
+                    {
 
+                    }
                 }
+               
                 
              
 
@@ -145,32 +152,48 @@ namespace Memorize
 
         }
 
+      
 
-
-        private string removeComments(string line)
+        //----------------------------------------------------------------------------------------------------------------------------------------------------------
+        // Adds new error to qError with questions name
+        private void addError(string errorMessage)
         {
-            char[] commentCharacter = {';'};
-            string res = line.Split(commentCharacter)[0];
-
-            return res;
+            this.qErrors.Add("Question" + ellip(name) + ":" + errorMessage);
         }
 
-        private string getNameWithEllip(int allowedLength = 5)
+
+        
+
+
+        //----------------------------------------------------------------------------------------------------------------------------------------------------------
+        //  adds ellip onto inputed string if greater than allowed length
+        private string ellip(string inputString, int allowedLength = 10)
         {
-            string aName = "";
+            string outputString = "";
              //must be greater than three also -1 because arrays
 
-            if (name.Length > allowedLength)
+            if (inputString.Length > allowedLength)
             {
                 for (int i = 0; i < allowedLength -3; i++)//removes excess and adds ellipse if over allowed length
                 {
-                    aName += name[i];
+                    outputString += inputString[i];
                 }
-                aName += "...";
+                outputString += "...";
             }
 
-            return aName;
+            return outputString;
         }
+
+
+        //----------------------------------------------------------------------------------------------------------------------------------------------------------
+        // returns the input but without any white space
+        private string removeWhitespace(string input)
+        {
+            return new string(input.ToCharArray()
+                .Where(c => !Char.IsWhiteSpace(c))
+                .ToArray());
+        }
+
 
 
     }

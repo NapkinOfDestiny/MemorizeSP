@@ -45,6 +45,11 @@ namespace Memorize
             bool first = true; // allows us to ignore any white space between title/descrip of lesson and the first question
 
 
+            rawData = removeCommentsFromArray(rawData);//cut out all comments
+
+
+
+
             for (int i = 0; i < rawData.Length; i++) //for each line 
             {
                 if (i == 0) //if first of file then get name and descrip of lessonFile
@@ -131,9 +136,9 @@ namespace Memorize
         }
 
 
-
+        //----------------------------------------------------------------------------------------------------------------------------------------------------------
         //returns a list of all the testquestion errors
-        public List<string> getError(int allowedLength)
+        public List<string> getError()
         {
             List<string> allErrors = new List<string>();
 
@@ -148,6 +153,35 @@ namespace Memorize
 
             return allErrors;
         }
+
+
+
+        //----------------------------------------------------------------------------------------------------------------------------------------------------------
+        // removes all comments from lines in rawData
+        private string[] removeCommentsFromArray(string[] data)
+        {
+            for (int i = 0; i < data.Length; i++)
+            {
+                data[i] = removeComments(data[i]);
+            }
+
+            return data;
+        }
+
+
+        //----------------------------------------------------------------------------------------------------------------------------------------------------------
+        // removes comments from the end of the input string
+        private string removeComments(string line)
+        {
+            char[] commentCharacter = { ';' };
+            string res = line.Split(commentCharacter)[0];
+
+            return res;
+        }
+
+
+
+
 
 
     }
