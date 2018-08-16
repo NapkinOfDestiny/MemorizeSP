@@ -30,7 +30,7 @@ namespace Memorize
 
         //----------------------------------------------------------------------------------------------------------------------------------------------------------
         // starts the lesson
-        public void start(bool multiblechoice, bool textInput )
+        public void start()
         {
             gatherQuestions(allowImgs, allowText);
             test();
@@ -51,24 +51,20 @@ namespace Memorize
                 {
 
 
-                    //check requirments if matches then add it
+                    //check requirments if matches then add it to test roster (var questions)
                     if (question.containsImg() == alImg && question.containsText() == alText)
                     {
                         questions.Add(question);
                     }
-
-
-
-
-
-
-
 
                 }
             }
 
         }
 
+
+        //----------------------------------------------------------------------------------------------------------------------------------------------------------
+        // where the testing magic happens
         private void test()
         {
 

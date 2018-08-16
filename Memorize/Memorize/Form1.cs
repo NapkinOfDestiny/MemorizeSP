@@ -89,9 +89,15 @@ namespace Memorize
         {
             List<Lesson> lessons = new List<Lesson>();//put lesson into a list
             lessons.Add(lesson);
+            
+
+
 
             Tester tester = new Tester(lessons);
-            tester.start(checkedListBox_featuresInLesson.GetSelected(0), checkedListBox_featuresInLesson.GetSelected(1));
+
+            tester.allowImgs = checkedListBox_featuresInLesson.GetItemChecked(0);//confgure test filter
+            tester.allowText = checkedListBox_featuresInLesson.GetItemChecked(1);
+            tester.start();
 
 
 
