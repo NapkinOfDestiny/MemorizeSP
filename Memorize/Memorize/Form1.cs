@@ -89,16 +89,26 @@ namespace Memorize
         {
             List<Lesson> lessons = new List<Lesson>();//put lesson into a list
             lessons.Add(lesson);
-            
 
 
 
+          
             Tester tester = new Tester(lessons);
 
             tester.allowImgs = checkedListBox_featuresInLesson.GetItemChecked(0);//confgure test filter
             tester.allowText = checkedListBox_featuresInLesson.GetItemChecked(1);
-            tester.start();
 
+
+            System.Windows.Forms.FlowLayoutPanel MC_Input = this.flowLayoutPanel_MC_InputPanel;//configure magic constructs (which has broken my brain making me wonder how I have gotten anything to work up to this point)
+            System.Windows.Forms.RichTextBox MC_Quest = this.richTextBox_MC_questionPanel;
+         
+
+            tester.start(MC_Input, MC_Quest);
+
+
+
+
+            
 
 
 
@@ -201,6 +211,14 @@ namespace Memorize
 
         }
 
-      
+        private void splitContainer_MC_SplitterMoved(object sender, SplitterEventArgs e)
+        {
+
+        }
+
+        private void trackBar_MC_scaling_Scroll(object sender, EventArgs e)
+        {
+            richTextBox_MC_questionPanel.ZoomFactor = trackBar_MC_scaling.Value + 1;
+        }
     }
 }

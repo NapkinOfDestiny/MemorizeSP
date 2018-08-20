@@ -14,16 +14,16 @@ namespace Memorize
        
 
         //Questions 
-        List<System.Drawing.Image> questionImages = new List<System.Drawing.Image>();
-        List<string> questionText = new List<string>(); // (this seems a bit odd because text doesnt need a list)
+        public List<System.Drawing.Image> questionImages = new List<System.Drawing.Image>();
+        public List<string> questionText = new List<string>(); // (this seems a bit odd because text doesnt need a list)
 
         //Answers 
-        List<System.Drawing.Image> answerImages = new List<System.Drawing.Image>();
-        List<string> answerText = new List<string>();
+        public List<System.Drawing.Image> answerImages = new List<System.Drawing.Image>();
+        public List<string> answerText = new List<string>();
 
         //*Answers 
-        List<System.Drawing.Image> sAnswerImages = new List<System.Drawing.Image>();
-        List<string> sAnswerText = new List<string>();
+        public List<System.Drawing.Image> sAnswerImages = new List<System.Drawing.Image>();
+        public List<string> sAnswerText = new List<string>();
 
 
 

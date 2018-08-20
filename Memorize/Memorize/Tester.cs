@@ -30,10 +30,13 @@ namespace Memorize
 
         //----------------------------------------------------------------------------------------------------------------------------------------------------------
         // starts the lesson
-        public void start()
+        public void start(
+            System.Windows.Forms.FlowLayoutPanel MC_input, 
+            System.Windows.Forms.RichTextBox MC_Quest
+            )
         {
             gatherQuestions(allowImgs, allowText);
-            test();
+            test(MC_input, MC_Quest);
            
         }
 
@@ -65,12 +68,30 @@ namespace Memorize
 
         //----------------------------------------------------------------------------------------------------------------------------------------------------------
         // where the testing magic happens
-        private void test()
+        private void test(System.Windows.Forms.FlowLayoutPanel MC_input, System.Windows.Forms.RichTextBox MC_Quest)
         {
+
+
+            foreach (var question in questions)
+            {
+                MultibleChoice mc = new MultibleChoice(MC_input, MC_Quest, question);
+                mc.setup();
+            }
+         
+          
+
+
+
+
+
+
 
 
         }
 
+
+
+       
 
 
     }
