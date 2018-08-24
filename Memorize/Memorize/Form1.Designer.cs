@@ -39,6 +39,9 @@
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton1_startLesson = new System.Windows.Forms.ToolStripButton();
             this.tabPage_multibleChoice = new System.Windows.Forms.TabPage();
+            this.splitContainer_MC = new System.Windows.Forms.SplitContainer();
+            this.trackBar_MC_scaling = new System.Windows.Forms.TrackBar();
+            this.richTextBox_MC_questionPanel = new System.Windows.Forms.RichTextBox();
             this.flowLayoutPanel_MC_InputPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.tabControl1_data = new System.Windows.Forms.TabControl();
             this.tabPage_lessonEditor = new System.Windows.Forms.TabPage();
@@ -48,20 +51,22 @@
             this.splitter2 = new System.Windows.Forms.Splitter();
             this.tabPage_qReview = new System.Windows.Forms.TabPage();
             this.progressBar_qReviewProgressBar = new System.Windows.Forms.ProgressBar();
+            this.tabPage_textInput = new System.Windows.Forms.TabPage();
+            this.richTextBox_TI_questionPanel = new System.Windows.Forms.RichTextBox();
             this.panel_selectLesson = new System.Windows.Forms.Panel();
             this.checkedListBox_featuresInLesson = new System.Windows.Forms.CheckedListBox();
             this.checkedListBox_lessonsChecked = new System.Windows.Forms.CheckedListBox();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.notifyIcon_Output = new System.Windows.Forms.NotifyIcon(this.components);
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.splitContainer_MC = new System.Windows.Forms.SplitContainer();
-            this.richTextBox_MC_questionPanel = new System.Windows.Forms.RichTextBox();
-            this.trackBar_MC_scaling = new System.Windows.Forms.TrackBar();
-            this.tabPage_textInput = new System.Windows.Forms.TabPage();
-            this.richTextBox_TI_questionPanel = new System.Windows.Forms.RichTextBox();
             this.panel1_control.SuspendLayout();
             this.toolStrip_controls.SuspendLayout();
             this.tabPage_multibleChoice.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer_MC)).BeginInit();
+            this.splitContainer_MC.Panel1.SuspendLayout();
+            this.splitContainer_MC.Panel2.SuspendLayout();
+            this.splitContainer_MC.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar_MC_scaling)).BeginInit();
             this.tabControl1_data.SuspendLayout();
             this.tabPage_lessonEditor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
@@ -69,17 +74,12 @@
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
             this.tabPage_qReview.SuspendLayout();
+            this.tabPage_textInput.SuspendLayout();
             this.panel_selectLesson.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer_MC)).BeginInit();
-            this.splitContainer_MC.Panel1.SuspendLayout();
-            this.splitContainer_MC.Panel2.SuspendLayout();
-            this.splitContainer_MC.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar_MC_scaling)).BeginInit();
-            this.tabPage_textInput.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1_control
@@ -180,6 +180,44 @@
             this.tabPage_multibleChoice.Text = "Multible Choice";
             this.tabPage_multibleChoice.UseVisualStyleBackColor = true;
             this.tabPage_multibleChoice.Click += new System.EventHandler(this.tabPage2_multibleChoice_Click);
+            // 
+            // splitContainer_MC
+            // 
+            this.splitContainer_MC.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer_MC.Location = new System.Drawing.Point(4, 4);
+            this.splitContainer_MC.Name = "splitContainer_MC";
+            this.splitContainer_MC.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer_MC.Panel1
+            // 
+            this.splitContainer_MC.Panel1.Controls.Add(this.trackBar_MC_scaling);
+            this.splitContainer_MC.Panel1.Controls.Add(this.richTextBox_MC_questionPanel);
+            // 
+            // splitContainer_MC.Panel2
+            // 
+            this.splitContainer_MC.Panel2.Controls.Add(this.flowLayoutPanel_MC_InputPanel);
+            this.splitContainer_MC.Size = new System.Drawing.Size(1051, 351);
+            this.splitContainer_MC.SplitterDistance = 173;
+            this.splitContainer_MC.TabIndex = 3;
+            this.splitContainer_MC.SplitterMoved += new System.Windows.Forms.SplitterEventHandler(this.splitContainer_MC_SplitterMoved);
+            // 
+            // trackBar_MC_scaling
+            // 
+            this.trackBar_MC_scaling.Location = new System.Drawing.Point(944, 3);
+            this.trackBar_MC_scaling.Name = "trackBar_MC_scaling";
+            this.trackBar_MC_scaling.Size = new System.Drawing.Size(103, 56);
+            this.trackBar_MC_scaling.TabIndex = 4;
+            this.trackBar_MC_scaling.Value = 1;
+            this.trackBar_MC_scaling.Scroll += new System.EventHandler(this.trackBar_MC_scaling_Scroll);
+            // 
+            // richTextBox_MC_questionPanel
+            // 
+            this.richTextBox_MC_questionPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.richTextBox_MC_questionPanel.Location = new System.Drawing.Point(0, 0);
+            this.richTextBox_MC_questionPanel.Name = "richTextBox_MC_questionPanel";
+            this.richTextBox_MC_questionPanel.Size = new System.Drawing.Size(1051, 173);
+            this.richTextBox_MC_questionPanel.TabIndex = 3;
+            this.richTextBox_MC_questionPanel.Text = "";
             // 
             // flowLayoutPanel_MC_InputPanel
             // 
@@ -284,6 +322,25 @@
             this.progressBar_qReviewProgressBar.Size = new System.Drawing.Size(293, 23);
             this.progressBar_qReviewProgressBar.TabIndex = 0;
             // 
+            // tabPage_textInput
+            // 
+            this.tabPage_textInput.Controls.Add(this.richTextBox_TI_questionPanel);
+            this.tabPage_textInput.Location = new System.Drawing.Point(4, 25);
+            this.tabPage_textInput.Margin = new System.Windows.Forms.Padding(4);
+            this.tabPage_textInput.Name = "tabPage_textInput";
+            this.tabPage_textInput.Size = new System.Drawing.Size(1059, 359);
+            this.tabPage_textInput.TabIndex = 2;
+            this.tabPage_textInput.Text = "Text Input";
+            this.tabPage_textInput.UseVisualStyleBackColor = true;
+            // 
+            // richTextBox_TI_questionPanel
+            // 
+            this.richTextBox_TI_questionPanel.Location = new System.Drawing.Point(272, 75);
+            this.richTextBox_TI_questionPanel.Name = "richTextBox_TI_questionPanel";
+            this.richTextBox_TI_questionPanel.Size = new System.Drawing.Size(486, 96);
+            this.richTextBox_TI_questionPanel.TabIndex = 0;
+            this.richTextBox_TI_questionPanel.Text = "";
+            // 
             // panel_selectLesson
             // 
             this.panel_selectLesson.Controls.Add(this.checkedListBox_featuresInLesson);
@@ -349,63 +406,6 @@
             this.splitContainer1.SplitterDistance = 388;
             this.splitContainer1.TabIndex = 5;
             // 
-            // splitContainer_MC
-            // 
-            this.splitContainer_MC.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer_MC.Location = new System.Drawing.Point(4, 4);
-            this.splitContainer_MC.Name = "splitContainer_MC";
-            this.splitContainer_MC.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            // 
-            // splitContainer_MC.Panel1
-            // 
-            this.splitContainer_MC.Panel1.Controls.Add(this.trackBar_MC_scaling);
-            this.splitContainer_MC.Panel1.Controls.Add(this.richTextBox_MC_questionPanel);
-            // 
-            // splitContainer_MC.Panel2
-            // 
-            this.splitContainer_MC.Panel2.Controls.Add(this.flowLayoutPanel_MC_InputPanel);
-            this.splitContainer_MC.Size = new System.Drawing.Size(1051, 351);
-            this.splitContainer_MC.SplitterDistance = 173;
-            this.splitContainer_MC.TabIndex = 3;
-            this.splitContainer_MC.SplitterMoved += new System.Windows.Forms.SplitterEventHandler(this.splitContainer_MC_SplitterMoved);
-            // 
-            // richTextBox_MC_questionPanel
-            // 
-            this.richTextBox_MC_questionPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.richTextBox_MC_questionPanel.Location = new System.Drawing.Point(0, 0);
-            this.richTextBox_MC_questionPanel.Name = "richTextBox_MC_questionPanel";
-            this.richTextBox_MC_questionPanel.Size = new System.Drawing.Size(1051, 173);
-            this.richTextBox_MC_questionPanel.TabIndex = 3;
-            this.richTextBox_MC_questionPanel.Text = "";
-            // 
-            // trackBar_MC_scaling
-            // 
-            this.trackBar_MC_scaling.Location = new System.Drawing.Point(944, 3);
-            this.trackBar_MC_scaling.Name = "trackBar_MC_scaling";
-            this.trackBar_MC_scaling.Size = new System.Drawing.Size(103, 56);
-            this.trackBar_MC_scaling.TabIndex = 4;
-            this.trackBar_MC_scaling.Value = 1;
-            this.trackBar_MC_scaling.Scroll += new System.EventHandler(this.trackBar_MC_scaling_Scroll);
-            // 
-            // tabPage_textInput
-            // 
-            this.tabPage_textInput.Controls.Add(this.richTextBox_TI_questionPanel);
-            this.tabPage_textInput.Location = new System.Drawing.Point(4, 25);
-            this.tabPage_textInput.Margin = new System.Windows.Forms.Padding(4);
-            this.tabPage_textInput.Name = "tabPage_textInput";
-            this.tabPage_textInput.Size = new System.Drawing.Size(1059, 359);
-            this.tabPage_textInput.TabIndex = 2;
-            this.tabPage_textInput.Text = "Text Input";
-            this.tabPage_textInput.UseVisualStyleBackColor = true;
-            // 
-            // richTextBox_TI_questionPanel
-            // 
-            this.richTextBox_TI_questionPanel.Location = new System.Drawing.Point(272, 75);
-            this.richTextBox_TI_questionPanel.Name = "richTextBox_TI_questionPanel";
-            this.richTextBox_TI_questionPanel.Size = new System.Drawing.Size(486, 96);
-            this.richTextBox_TI_questionPanel.TabIndex = 0;
-            this.richTextBox_TI_questionPanel.Text = "";
-            // 
             // MemorizeMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -422,6 +422,12 @@
             this.toolStrip_controls.ResumeLayout(false);
             this.toolStrip_controls.PerformLayout();
             this.tabPage_multibleChoice.ResumeLayout(false);
+            this.splitContainer_MC.Panel1.ResumeLayout(false);
+            this.splitContainer_MC.Panel1.PerformLayout();
+            this.splitContainer_MC.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer_MC)).EndInit();
+            this.splitContainer_MC.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar_MC_scaling)).EndInit();
             this.tabControl1_data.ResumeLayout(false);
             this.tabPage_lessonEditor.ResumeLayout(false);
             this.splitContainer2.Panel1.ResumeLayout(false);
@@ -431,19 +437,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
             this.tabPage_qReview.ResumeLayout(false);
+            this.tabPage_textInput.ResumeLayout(false);
             this.panel_selectLesson.ResumeLayout(false);
             this.panel_selectLesson.PerformLayout();
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            this.splitContainer_MC.Panel1.ResumeLayout(false);
-            this.splitContainer_MC.Panel1.PerformLayout();
-            this.splitContainer_MC.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer_MC)).EndInit();
-            this.splitContainer_MC.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar_MC_scaling)).EndInit();
-            this.tabPage_textInput.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
