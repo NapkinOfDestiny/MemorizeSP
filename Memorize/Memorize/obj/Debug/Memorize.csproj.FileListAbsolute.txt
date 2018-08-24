@@ -18,3 +18,13 @@ C:\Users\Nick\Documents\Projects\MemorizeSP\Memorize\Memorize\obj\Debug\Memorize
 C:\Users\Nick\Documents\Projects\MemorizeSP\Memorize\Memorize\bin\Debug\Memorize.exe.config
 C:\Users\Nick\Documents\Projects\MemorizeSP\Memorize\Memorize\bin\Debug\Memorize.exe
 C:\Users\Nick\Documents\Projects\MemorizeSP\Memorize\Memorize\bin\Debug\Memorize.pdb
+D:\Documents\Projects\Memorize\MemorizeSP\Memorize\Memorize\bin\Debug\Memorize.exe.config
+D:\Documents\Projects\Memorize\MemorizeSP\Memorize\Memorize\bin\Debug\Memorize.exe
+D:\Documents\Projects\Memorize\MemorizeSP\Memorize\Memorize\bin\Debug\Memorize.pdb
+D:\Documents\Projects\Memorize\MemorizeSP\Memorize\Memorize\obj\Debug\Memorize.csprojResolveAssemblyReference.cache
+D:\Documents\Projects\Memorize\MemorizeSP\Memorize\Memorize\obj\Debug\Memorize.MemorizeMenu.resources
+D:\Documents\Projects\Memorize\MemorizeSP\Memorize\Memorize\obj\Debug\Memorize.Properties.Resources.resources
+D:\Documents\Projects\Memorize\MemorizeSP\Memorize\Memorize\obj\Debug\Memorize.csproj.GenerateResource.cache
+D:\Documents\Projects\Memorize\MemorizeSP\Memorize\Memorize\obj\Debug\Memorize.csproj.CoreCompileInputs.cache
+D:\Documents\Projects\Memorize\MemorizeSP\Memorize\Memorize\obj\Debug\Memorize.exe
+D:\Documents\Projects\Memorize\MemorizeSP\Memorize\Memorize\obj\Debug\Memorize.pdb

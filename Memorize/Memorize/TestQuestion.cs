@@ -199,9 +199,20 @@ namespace Memorize
                 finalPath += item;
             }
 
+            try
+            {
+                return System.Drawing.Image.FromFile(finalPath);
+            }
+            catch (Exception)
+            {
+                addError($"Unable To Find Img At \"{unformatedPath}\"");
 
-            return System.Drawing.Image.FromFile(finalPath);
-
+                //return blank img
+                var b = new System.Drawing.Bitmap(1, 1);
+                b.SetPixel(0, 0, System.Drawing.Color.White);
+                return new System.Drawing.Bitmap(b, 200, 200); ;
+            }
+           
         }
 
 
@@ -210,7 +221,7 @@ namespace Memorize
         // Adds new error to qError with questions name
         private void addError(string errorMessage)
         {
-            this.qErrors.Add("Question" + ellip(name) + ":" + errorMessage);
+            this.qErrors.Add("Question(" + ellip(name) + "): " + errorMessage);
         }
 
 
@@ -219,7 +230,7 @@ namespace Memorize
 
         //----------------------------------------------------------------------------------------------------------------------------------------------------------
         //  adds ellip onto inputed string if greater than allowed length
-        private string ellip(string inputString, int allowedLength = 10)
+        private string ellip(string inputString, int allowedLength = 15)
         {
             string outputString = "";
              //must be greater than three also -1 because arrays

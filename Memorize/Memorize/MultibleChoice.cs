@@ -11,18 +11,17 @@ namespace Memorize
     {
 
         public FlowLayoutPanel userInputPanel { get; set; }// these are what the application sets up for user to see
-        public RichTextBox questionPanel { get; set; }
+      
 
         public TestQuestion question { get; set; }
 
 
         //----------------------------------------------------------------------------------------------------------------------------------------------------------
         //Constructor
-        public MultibleChoice(FlowLayoutPanel inputPanel, RichTextBox questPanel, TestQuestion aQuest)
+        public MultibleChoice(FlowLayoutPanel inputPanel, TestQuestion aQuestion)
         {
             userInputPanel = inputPanel;
-            questionPanel = questPanel;
-            question = aQuest;
+            question = aQuestion;
 
         }
 
@@ -33,22 +32,7 @@ namespace Memorize
         {
 
 
-            //Configure Question Portion
-            foreach (var item in question.questionImages)//add images
-            {
-                dynamic clipSave = Clipboard.GetDataObject();//save current clipboard
-
-                Clipboard.SetImage(item);
-                questionPanel.Paste();//paste in rich text
-
-
-                //Clipboard.SetDataObject(clipSave);//restore clipboard
-            }
-        /*    foreach (var item in question.questionText)//add text
-            {
-                questionPanel.Text += item + "\r\r";
-            }*/
-          
+         
 
 
 

@@ -92,25 +92,43 @@ namespace Memorize
 
 
 
-          
-            Tester tester = new Tester(lessons);
+            System.Windows.Forms.FlowLayoutPanel MC_Input = this.flowLayoutPanel_MC_answerPanel;//configure magic constructs (which has broken my brain making me wonder how I have gotten anything to work up to this point)
+
+            System.Windows.Forms.RichTextBox questTextPanel = this.richTextBox_questionTextPanel;
+            System.Windows.Forms.ImageList questImgPanel = this.imageList_questionImgPanel;
+
+
+
+            Tester tester = new Tester(lessons, questTextPanel, questImgPanel);// get tester object
 
             tester.allowImgs = checkedListBox_featuresInLesson.GetItemChecked(0);//confgure test filter
             tester.allowText = checkedListBox_featuresInLesson.GetItemChecked(1);
 
 
-            System.Windows.Forms.FlowLayoutPanel MC_Input = this.flowLayoutPanel_MC_InputPanel;//configure magic constructs (which has broken my brain making me wonder how I have gotten anything to work up to this point)
-            System.Windows.Forms.RichTextBox MC_Quest = this.richTextBox_MC_questionPanel;
+            
          
 
-            tester.start(MC_Input, MC_Quest);
+            tester.start(MC_Input);
 
 
 
 
+            for (int j = 0; j < 1; j++)
+
+            {
+
+                ListViewItem itema = new ListViewItem();
+
+                itema.ImageIndex = j;
+
+
+                listView_questionImgDesplay.Items.Add(itema);
+
+
+            }
+
+            listView_questionImgDesplay.View = View.LargeIcon;
             
-
-
 
         }
 
@@ -140,15 +158,15 @@ namespace Memorize
             //if there is more than 0 errors then desplay them
             if (le.getError().Count > 0)
             {
-                string errors = "";
+                textBox_errors.Text = "Errors(" + le.getError().Count + ")" + "\r\n";
 
                 foreach (var item in le.getError())
                 {
-                    errors += item + "\r\n";
+                    textBox_errors.Text += item + "\r\n";
                 }
 
 
-                textBox_errors.Text = "Errors(" + le.getError().Count + ")/r/n" + errors;
+                 
             }
             else
             {
@@ -218,7 +236,7 @@ namespace Memorize
 
         private void trackBar_MC_scaling_Scroll(object sender, EventArgs e)
         {
-            richTextBox_MC_questionPanel.ZoomFactor = trackBar_MC_scaling.Value + 1;
+            richTextBox_questionTextPanel.ZoomFactor = trackBar_MC_scaling.Value + 1;
         }
     }
 }
