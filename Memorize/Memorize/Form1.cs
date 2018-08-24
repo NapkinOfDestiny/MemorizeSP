@@ -95,11 +95,13 @@ namespace Memorize
             System.Windows.Forms.FlowLayoutPanel MC_Input = this.flowLayoutPanel_MC_answerPanel;//configure magic constructs (which has broken my brain making me wonder how I have gotten anything to work up to this point)
 
             System.Windows.Forms.RichTextBox questTextPanel = this.richTextBox_questionTextPanel;
+
             System.Windows.Forms.ImageList questImgPanel = this.imageList_questionImgPanel;
+            System.Windows.Forms.ListView questImgDesplay = this.listView_questionImgDesplay;
 
 
 
-            Tester tester = new Tester(lessons, questTextPanel, questImgPanel);// get tester object
+            Tester tester = new Tester(lessons, questTextPanel, questImgPanel, questImgDesplay);// get tester object
 
             tester.allowImgs = checkedListBox_featuresInLesson.GetItemChecked(0);//confgure test filter
             tester.allowText = checkedListBox_featuresInLesson.GetItemChecked(1);
@@ -113,21 +115,9 @@ namespace Memorize
 
 
 
-            for (int j = 0; j < 1; j++)
+       
 
-            {
-
-                ListViewItem itema = new ListViewItem();
-
-                itema.ImageIndex = j;
-
-
-                listView_questionImgDesplay.Items.Add(itema);
-
-
-            }
-
-            listView_questionImgDesplay.View = View.LargeIcon;
+          
             
 
         }

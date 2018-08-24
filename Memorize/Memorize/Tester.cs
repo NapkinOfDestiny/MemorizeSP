@@ -28,6 +28,8 @@ namespace Memorize
 
         // Where to desplay question
         System.Windows.Forms.ImageList questionImgPanel;
+        System.Windows.Forms.ListView questionImgDesplay;
+
         System.Windows.Forms.RichTextBox questionTextPanel;
 
 
@@ -39,12 +41,14 @@ namespace Memorize
             (
             List<Lesson> les,
             System.Windows.Forms.RichTextBox questTextPanel,
-            System.Windows.Forms.ImageList questImgPanel
+            System.Windows.Forms.ImageList questImgPanel,
+            System.Windows.Forms.ListView questImgDesplay
             )
         {
             lessons = les;
             questionImgPanel = questImgPanel;
             questionTextPanel = questTextPanel;
+            questionImgDesplay = questImgDesplay;
 
 
 
@@ -104,34 +108,20 @@ namespace Memorize
             foreach (var question in questions)
             {
 
+                //reset 
+                questionTextPanel.Text = "";
+                questionImgPanel.Images.Clear();
+                questionImgDesplay.Clear();
+
+
                 //Configure Question Portion
                 foreach (var item in question.questionImages)//add images
                 {
-
-
-
-                    /*  for (int j = 0; j < question.questionImages.Count; j++)
-                      {
-
-                          System.Windows.Forms.ListViewItem itema = new System.Windows.Forms.ListViewItem();
-
-                          itema.ImageIndex = j;
-
-
-                          questionImgPanel.Items.Add(itema);
-
-                      }*/
-
-                    for (int j = 0; j < question.questionImages.Count; j++)
-                    {
-
-                        questionImgPanel.Images.Add(question.questionImages[j]);
-
-                    }
-
+                        questionImgPanel.Images.Add(item);
 
 
                 }
+                refreshQuestImgDesplay();
 
                 foreach (var item in question.questionText)//add text
                 {
@@ -162,7 +152,24 @@ namespace Memorize
         }
 
 
+        //----------------------------------------------------------------------------------------------------------------------------------------------------------
+        // refreshes img desplay (still trying to grasp desplaying imgs it works though)
+        private void refreshQuestImgDesplay()
+        {
+            for (int j = 0; j < questionImgPanel.Images.Count; j++)
 
+            {
+
+                System.Windows.Forms.ListViewItem itema = new System.Windows.Forms.ListViewItem();
+
+                itema.ImageIndex = j;
+
+
+                questionImgDesplay.Items.Add(itema);
+
+
+            }
+        }
        
 
 
