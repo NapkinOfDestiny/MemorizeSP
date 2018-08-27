@@ -135,7 +135,7 @@ namespace Memorize
 
 
 
-
+                //this is where text and MC will differ in code will need to add random if both selected 
                 MultibleChoice mc = new MultibleChoice(MC_input, question);
                 mc.setup();
             }

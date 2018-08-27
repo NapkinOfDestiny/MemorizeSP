@@ -9,13 +9,17 @@ this is the name/title/number of the question ;a comment/
 text question ect
 text question ect
 @C:\temp\Age cat.JPG
+@C:\temp\Age cat.JPG
 <A>
-some answer stuff
-some answer stuff
-some answer stuff
+False answer
+false answer
+@C:\temp\test1.bmp
+@C:\temp\test1.bmp
 <*A>
 theRealAnswer
 theRealAnswer
+@C:\temp\test2.bmp
+@C:\temp\test2.bmp
 theRealAnswer
 
 
